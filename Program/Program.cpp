@@ -14,12 +14,13 @@ private:
 	// 리스트의 시작 위치를 가리키는 포인터
 	Node* head;
 public:		// 생성자 소멸자
-	//List(int size, Node* head) : size(0), head(nullptr) {}		// 이니셜라이저 초기화는 다시 해봐야겟다
-	List()
+	List() : size(0), head(nullptr) {}
+	List(int _size, Node* _head) : size(_size), head(_head) {}		// 이니셜라이저 초기화는 다시 해봐야겟다
+	/*List()
 	{
 		size = 0;
 		head = nullptr;
-	}
+	}*/
 	~List()
 	{
 		// 날먹코드네 
@@ -98,30 +99,33 @@ public:		// 함수라인
 
 	void pop_back()
 	{
-		// 그림 보면서 다시해봐야겟다 그림ㅇ르 지웟네? ;;;;;;
-		Node* deleteNode;
+		// [10] [20] [30]			[nullptr] -> [10] [20] [nullptr]
+		//	↑	     ↑				↑
+		//  head     previousNode	deleteNode
 
 		if (head == nullptr)
 		{
-			Node* deleteNode = head;
+			cout << "empty" << endl;
+		}
+
+		else if (head->next == nullptr)
+		{
+			delete head;	// 시작점이니까 지우기
+			head = nullptr;
 		}
 		else
 		{
-			// 안비워져있으면 
-			head = deleteNode->next;			// 헤더는 삭제노도의 다음?이 맞나 이게아닌가 이게 위에 저렇게한거라고 한거 
-			head = head->next;					// 헤더는 그 다음 헤더를 가리키는거 이게 맞는거 같은데
-			//deleteNode->next = nullptr;			// 삭제노드가 다음으로 가리키는게 nullptr 얜 맞는듯
+			Node* previousNode = head;
+			Node* deleteNode = head->next;
 
-			while (deleteNode->next != nullptr)	// 조건도 이게 아닌거같은데 
+			while (deleteNode->next != nullptr)
 			{
-				head = deleteNode->data;
+				previousNode = deleteNode;		// 이전노드가 삭제노드여야하고
+				deleteNode = deleteNode->next;	// 삭제노드는 본인이 가리키고 잇던 다음을 가리킨다
 			}
-			Node* previousNode = deleteNode->next;	// 얘랑
-			Node* previousNode = head;				// 얘랑같은의미 아닌가 위에 저렇게 햇으면 
-			delete deleteNode;
-			size--;		// 감소 
+		delete deleteNode;				// 다됏으면 삭제노드 지우기(?)
+		size--;			// 여기서 해도 되잖아
 		}
-
 	}
 };
 
@@ -138,4 +142,10 @@ int main()
 	list.pop_front();
 
 	return 0;
+
+	// 양방향 연결 리스트 삽입 순서
+	//newNode->prev = prev;
+	//newNode->next = next;
+	//prev->next = newNode;
+	//next->prev = newNode;
 }
