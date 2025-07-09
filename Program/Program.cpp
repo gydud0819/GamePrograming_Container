@@ -127,6 +127,21 @@ public:		// 함수라인
 		size--;			// 여기서 해도 되잖아
 		}
 	}
+
+	bool Empty()		// 함수 자체가 0 아님 1 반환하는거니까 if문 쓸필요가 없겠네 
+	{
+		return head == nullptr;
+		// 원소가 있으면 1 없으면 0
+		//if (head==nullptr)
+		//{
+		//	return true;
+		//}
+		//else
+		//{
+		//	return false;
+		//}
+	}
+	
 };
 
 int main()
@@ -140,6 +155,8 @@ int main()
 	list.push_back(30);
 
 	list.pop_front();
+
+	cout << list.Empty() << endl;
 
 	return 0;
 
