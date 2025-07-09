@@ -14,7 +14,7 @@ private:
 	Node* head;
 	Node* tail;
 public:
-	List() : size(0), head(nullptr), tail(nullptr) {}
+	List() : size(0), head(NULL), tail(NULL) {}
 	List(int _size, Node* _head, Node* _tail) : size(_size), head(_head), tail(_tail) {}
 
 };
