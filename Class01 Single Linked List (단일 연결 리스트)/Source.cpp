@@ -175,8 +175,13 @@ public:		// 함수라인
 					delete deleteNode;
 					size--;
 					deleteNode = head;
+
+					return;
 				}
 				previousNode = deleteNode;
+
+				// 하나 남앗을때 안터지게 예외처리
+				
 				deleteNode = deleteNode->next;
 			}
 		}
@@ -217,6 +222,7 @@ int main()
 	list.pop_front();
 
 	cout << list.Empty() << endl;
+
 
 	return 0;
 
