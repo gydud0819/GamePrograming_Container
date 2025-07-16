@@ -176,13 +176,17 @@ public:		// 함수라인
 					size--;
 					deleteNode = head;
 
+					// 하나 남앗을때 안터지게 예외처리
 					return;
 				}
-				previousNode = deleteNode;
 
-				// 하나 남앗을때 안터지게 예외처리
-				
-				deleteNode = deleteNode->next;
+				if (size > 1)
+				{
+					previousNode = deleteNode;
+
+					deleteNode = deleteNode->next;
+				}
+
 			}
 		}
 
