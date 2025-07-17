@@ -1,103 +1,79 @@
 ﻿#include "Util.h"
 
 template <typename T>
-class List
+class Vector
 {
 	int size;
-	struct Node
-	{
-		T data;
-		Node* next;
-	};
-	Node* head;
-public:
-	List() : size(0), head(nullptr) {}
-	List(int _size, Node* _head) : size(_size), head(_head) {}
-	~List()
-	{
+	int capacity;	// 메모리 공간 크기
 
+	T* container;
+
+public:
+	Vector() : size(0), capacity(0), container(nullptr) {}
+	Vector(int _size, int _capacity) : size(_size), capacity(_capacity) {}
+	~Vector()
+	{
+		if (container != nullptr)
+		{
+
+			delete[] container;		// 다 못적어서 보류 
+		}
 	}
 
 public:
+	void resize(int newSize)
+	{
+		//for문 써야하나..?
+		// 1. capacity에 새로운 size값 저장하기
+		capacity = newSize;		// 이게 아닌거 같은데 
+
+		// 2. 새로운 포인터 변수를 생성하고 새롭게 만들어진 메모리 공간을 가리키도록 하기
+		T* newContainer = new T[newSize];
+
+		// 3. 새로운 메모리 공간의 값 초기화하기
+		for (int i = 0; i < capacity; i++)
+		{
+			newContainer[i] = T();	// NULL도 가능
+
+		}
+
+		// 4. 기존 배열에 있는 값을 복사해서 새로운 배열에 넣어주기 
+		for (int i = 0; i < size/* && i < newSize*/; i++)
+		{
+			newContainer[i] = container[i];
+		}
+
+		// 5. 기존 배열의 메모리 해제하기
+		if(container != nullptr)
+			delete[] container;
+		
+		// 6. 기존 배열을 가리키던 포인터 변수의 값을 새로운 배열의 시작 주소로 가리키기 
+		container = newContainer;
+
+		/*if (size > newSize)
+			size = newSize;*/
+			// ?????????????????????????????????????????????????????????????????????
+	}
+
+	// 데이터 추가할 때
 	void push_back(T data)
 	{
-		Node* newNode = new Node;
-		newNode->data = data;
-
-		if (head == nullptr)
+		// 데이터가 존재하지 않을때 ??
+		if (size > data)
 		{
-			head = newNode;
-			newNode->next = head;
+			
 		}
 		else
 		{
-			newNode->next = head->next;
-			head->next = newNode;
-
-			newNode = head;
 
 		}
-		size++;
+		
+		
+
 	}
-
-	void push_front(T data)
-	{
-		Node* newNode = new Node;
-		newNode->data = data;
-
-		if (head == nullptr)
-		{
-			head = newNode;
-			newNode->next = head;
-		}
-		else
-		{
-			// 하나 이상 있을 때 다름
-			newNode->next = head->next;
-			//head = head->next;
-
-			head->next = newNode;
-			//head = newNode;
-		}
-		size++;
-	}
-
-	void pop_front()
-	{
-
-		if (head == nullptr)
-		{
-			cout << "empty" << endl;
-		}
-
-
-		else
-		{
-			Node* deleteNode = head;
-			head = head->next;
-
-			deleteNode->next->data = head;
-			head = nullptr;
-
-			delete deleteNode;
-			size--;
-		}
-	}
-
-	void pop_back()
-
 };
 
 int main()
 {
-	List<int> list;
-
-	list.push_back(10);
-	list.push_back(20);
-	list.push_back(30);
-	list.push_back(40);
-
-	list.push_front(1);
-	list.push_front(5);
-	list.push_front(10);
+	return 0;
 }
