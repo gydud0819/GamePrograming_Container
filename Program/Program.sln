@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "class02th Double Linked Lis
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class03 Circle Linked list (원형 연결 리스트)", "..\Class03 Circle Linked list (원형 연결 리스트)\Class03 Circle Linked list (원형 연결 리스트).vcxproj", "{87D0FC5B-0989-4614-AB92-76E58D2BC632}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class04th vector (벡터)", "..\Class04th vector (벡터)\Class04th vector (벡터).vcxproj", "{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +53,14 @@ Global
 		{87D0FC5B-0989-4614-AB92-76E58D2BC632}.Release|x64.Build.0 = Release|x64
 		{87D0FC5B-0989-4614-AB92-76E58D2BC632}.Release|x86.ActiveCfg = Release|Win32
 		{87D0FC5B-0989-4614-AB92-76E58D2BC632}.Release|x86.Build.0 = Release|Win32
+		{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}.Debug|x64.ActiveCfg = Debug|x64
+		{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}.Debug|x64.Build.0 = Debug|x64
+		{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}.Debug|x86.ActiveCfg = Debug|Win32
+		{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}.Debug|x86.Build.0 = Debug|Win32
+		{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}.Release|x64.ActiveCfg = Release|x64
+		{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}.Release|x64.Build.0 = Release|x64
+		{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}.Release|x86.ActiveCfg = Release|Win32
+		{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,79 +1,60 @@
 ﻿#include "Util.h"
 
-template <typename T>
-class Vector
+class String	// 문자열 == 문자들의 배열 [] <- 쓰는건가 
 {
-	int size;
-	int capacity;	// 메모리 공간 크기
-
-	T* container;
-
-public:
-	Vector() : size(0), capacity(0), container(nullptr) {}
-	Vector(int _size, int _capacity) : size(_size), capacity(_capacity) {}
-	~Vector()
-	{
-		if (container != nullptr)
-		{
-
-			delete[] container;		// 다 못적어서 보류 
-		}
-	}
+	// 길이? 
+	int size;		// ?
+	char* pointer;	// ???
 
 public:
-	void resize(int newSize)
+	String() : size(0), pointer(nullptr) {}
+	String(int _size, char* _pointer) : size(_size), pointer(_pointer) {}
+	~String()
 	{
-		//for문 써야하나..?
-		// 1. capacity에 새로운 size값 저장하기
-		capacity = newSize;		// 이게 아닌거 같은데 
 
-		// 2. 새로운 포인터 변수를 생성하고 새롭게 만들어진 메모리 공간을 가리키도록 하기
-		T* newContainer = new T[newSize];
-
-		// 3. 새로운 메모리 공간의 값 초기화하기
-		for (int i = 0; i < capacity; i++)
-		{
-			newContainer[i] = T();	// NULL도 가능
-
-		}
-
-		// 4. 기존 배열에 있는 값을 복사해서 새로운 배열에 넣어주기 
-		for (int i = 0; i < size/* && i < newSize*/; i++)
-		{
-			newContainer[i] = container[i];
-		}
-
-		// 5. 기존 배열의 메모리 해제하기
-		if(container != nullptr)
-			delete[] container;
-		
-		// 6. 기존 배열을 가리키던 포인터 변수의 값을 새로운 배열의 시작 주소로 가리키기 
-		container = newContainer;
-
-		/*if (size > newSize)
-			size = newSize;*/
-			// ?????????????????????????????????????????????????????????????????????
 	}
-
-	// 데이터 추가할 때
-	void push_back(T data)
+public:
+	void operator = (const char* word)
 	{
-		// 데이터가 존재하지 않을때 ??
-		if (size > data)
+		// 주석 달아도 이해안갈거 같은데 
+		size = strlen(word) + 1;		// 길이 = word의 길이에 +1 하기 ('\0' <- 포함해야해서)
+		if (pointer == nullptr)			// 아무것도 가리키지않을때
 		{
-			
+			pointer = new char[size];	// 새로 할당하기? 문자열의 길이만큼? 
+
+			for (int i = 0; i < size; i++)
+			{
+				pointer[i] = word[i];	// 복사해서 담기(?)
+			}
 		}
 		else
 		{
+			char* temporary = new char[size];		// 이건 뭐야 
 
+			for (int i = 0; i < size; i++)	// 사이즈만큼 돌리고
+			{
+				temporary[i] = word[i];	 // 복사해서 가리키는 값을 담는다?
+			}
+			delete[] pointer;		// 재할당해야해서 지워주기 -> word의 League of Lengend 지워주기(?)
+
+			pointer = temporary;
 		}
-		
-		
+	}
 
+	// 문자열 길이 구하기(?)
+	const int& length()
+	{
+		return size - 1;		// '\0' <- 빼야한다? 먼소리여 
 	}
 };
 
 int main()
 {
+	String message;
+	message = "League of Lengend";
+	message = "Adidas";
+	
+	cout<< message.length();
+
 	return 0;
 }
