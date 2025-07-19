@@ -1,10 +1,13 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\",
+  "WorkspaceRootPath": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|solutionrelative:Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}|..\\Class04th vector (\uBCA1\uD130)\\Class04th vector (\uBCA1\uD130).vcxproj|C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Class04th vector (\uBCA1\uD130)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,18 +20,27 @@
           "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Class04th vector (\uBCA1\uD130)\\Source.cpp",
+              "RelativeDocumentMoniker": "..\\Class04th vector (\uBCA1\uD130)\\Source.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Class04th vector (\uBCA1\uD130)\\Source.cpp",
+              "RelativeToolTip": "..\\Class04th vector (\uBCA1\uD130)\\Source.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAGYAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-19T13:13:54.043Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\Program.cpp",
               "RelativeDocumentMoniker": "Program.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp",
-              "RelativeToolTip": "Program.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAACAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\Program.cpp*",
+              "RelativeToolTip": "Program.cpp*",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAAAJQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-08T04:10:04.709Z",
               "EditorCaption": ""
