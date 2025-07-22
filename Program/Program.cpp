@@ -1,4 +1,47 @@
 ﻿#include "Util.h"
+#define SIZE 4
+
+// 내일 원형 큐, priority Queue? 예정 
+template <typename T>
+class Queue
+{
+private:
+	int front;	// [3]에서 front가 시작함 (?) 
+	int rear;
+	T container[SIZE];
+public:
+	Queue() : front(SIZE - 1) , rear(SIZE - 1)		//[3]에서 front, rear이 시작하니까 SIZE - 1이 맞겠네 
+	{
+		for (int i = 0; i < SIZE; i++)
+		{
+			container[i] = NULL;
+		}
+	}
+
+public:
+	// 이건 쪼끔 어려운거 같은데 이게 대체 무슨말이야 
+	void push(T data)
+	{
+		if (rear >= SIZE)
+		{
+			cout << "Queue is Full " << endl;
+		}
+		container[rear] = data;		// ????????????????????????????????????????????????????
+		rear = (rear + 1) % SIZE;
+	
+	}
+
+	bool isEmpty()
+	{
+		return rear == front;
+	}
+
+	void pop()
+	{
+
+	}
+};
+
 // stack, 선형 큐, 원형 큐 예정
 //template <typename T>
 //class Queue
@@ -86,7 +129,14 @@
 //		return size == capacity;
 //	}
 //};
+
 int main()
 {
+	Queue<int> q;
+	q.push(10);
+	q.push(20);
+	q.push(30);
+	q.push(40);
+	q.push(50);
 	return 0;
 }
