@@ -1,19 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\",
+  "WorkspaceRootPath": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|solutionrelative:Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C5999DD6-0F43-41E2-8308-94DD5CFFCA59}|..\\Class04th vector (\uBCA1\uD130)\\Class04th vector (\uBCA1\uD130).vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class04th vector (\uBCA1\uD130)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2BE1757-9641-4F55-BDAF-F9E62A529854}|..\\Class08th Circle Queue (\uC6D0\uD615 \uD050)\\Class08th Circle Queue (\uC6D0\uD615 \uD050).vcxproj|C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Class08th Circle Queue (\uC6D0\uD615 \uD050)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\PROGRAM FILES\\MICROSOFT VISUAL STUDIO\\2022\\COMMUNITY\\VC\\TOOLS\\MSVC\\14.44.35207\\INCLUDE\\UTILITY||{3B902123-F8A7-4915-9F01-361F908088D0}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|solutionrelative:Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -24,60 +21,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "utility",
-              "DocumentMoniker": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\utility",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\utility",
-              "ToolTip": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\utility",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.44.35207\\include\\utility",
-              "ViewState": "AgIAAHYAAAAAAAAAAAAhwIgAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-23T05:32:50.726Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class04th vector (\uBCA1\uD130)\\Source.cpp",
-              "RelativeDocumentMoniker": "..\\Class04th vector (\uBCA1\uD130)\\Source.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class04th vector (\uBCA1\uD130)\\Source.cpp",
-              "RelativeToolTip": "..\\Class04th vector (\uBCA1\uD130)\\Source.cpp",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAEQAAAAcAAAAAAAAAA==",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Class08th Circle Queue (\uC6D0\uD615 \uD050)\\Source.cpp",
+              "RelativeDocumentMoniker": "..\\Class08th Circle Queue (\uC6D0\uD615 \uD050)\\Source.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Class08th Circle Queue (\uC6D0\uD615 \uD050)\\Source.cpp",
+              "RelativeToolTip": "..\\Class08th Circle Queue (\uC6D0\uD615 \uD050)\\Source.cpp",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-23T04:41:09.657Z",
+              "WhenOpened": "2025-07-23T16:01:36.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Util.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Util.h",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\Util.h",
               "RelativeDocumentMoniker": "Util.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Util.h",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\Util.h",
               "RelativeToolTip": "Util.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-07-23T04:33:31.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T04:33:31.587Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\Program.cpp",
               "RelativeDocumentMoniker": "Program.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\Program.cpp",
               "RelativeToolTip": "Program.cpp",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAAAMQAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAEoBAAAAAAAAAAAuwFkBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-08T04:10:04.709Z",
               "EditorCaption": ""

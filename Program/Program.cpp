@@ -22,7 +22,7 @@ public:
 public:
 	void resize(int newSize)
 	{
-		capacity = newSize;		// 이게 아닌거 같은데 
+		//capacity = newSize;		// 이게 아닌거 같은데 
 
 		// 2. 새로운 포인터 변수를 생성하고 새롭게 만들어진 메모리 공간을 가리키도록 하기
 		T* newContainer = new T[newSize];
@@ -46,6 +46,7 @@ public:
 
 		// 6. 기존 배열을 가리키던 포인터 변수의 값을 새로운 배열의 시작 주소로 가리키기 
 		container = newContainer;
+		capacity = newSize;		// capacity를 새롭게 바꿔주기
 	}
 
 	// 우와............................... 이게 무슨 말이야 
@@ -59,7 +60,7 @@ public:
 
 		if (index >= capacity)
 		{
-			return resize(capacity * 2);	// 2배 증가요? 
+			resize(capacity * 2);	// 2배 증가요? 
 		}
 
 		container[index++] = data;
@@ -97,27 +98,40 @@ public:
 
 	void pop()		// 집가서 수정하기 
 	{
+		if (index <= 0)
+		{
+			return;		// 비어있으면 그냥 리턴하기
+		}
 		// 전위? --index; <-이거? 
 
 		// 왼쪽 : parent * 2 + 1
 		// 오른쪽 : 왼쪽 + 1
 
 		int parent = 0;
-		int leftchild = parent * 2 + 1;		// 왼쪽 오른쪽 자식 변수 있어야하나용?
-		int rightchild = leftchild + 1;
-		int child = leftchild - 1;
 
 		while ((parent * 2 + 1) < index)
 		{
-			if (container[leftchild] < container[rightchild])
-			{
-				swap(container[child], container[parent]);
-			}
+		int leftchild = parent * 2 + 1;		// 왼쪽 오른쪽 자식 변수 있어야하나용?
+		int rightchild = leftchild + 1;
+		int child = parent;			// 자식 변수 초기화? 맞나 
 		
-			container[child] = container[parent];
-			child = parent;			// ? 
+			// 왼쪽 자식이 존재하고 왼쪽 자식이 부모보다 크면 왼쪽 자식으로 바꿔주기
+			if (leftchild < index && container[leftchild] > container[child])
+			{
+				child = leftchild;		// 왼쪽 자식이 더 크면 왼쪽 자식으로 바꿔주기
+			}
 
-			break;
+			// 오른쪽 자식이 존재하고 오른쪽 자식이 부모보다 크면 
+			if (rightchild < index && container[rightchild] > container[child])
+			{
+				child = rightchild;		// 오른쪽 자식이 더 크면 오른쪽 자식으로 바꿔주기
+			}
+
+			if (child == parent) { break; }	// 자식이 안바뀌면 종료하기
+				
+			swap(container[child], container[parent]);
+
+			parent = child;		// parent = child, child = parent 차이가 큰가? 
 		}
 	
 	}
@@ -194,7 +208,120 @@ public:
 //	}
 //};
 
+
 // 내일 해시테이블 예정 
+#pragma region MyRegion
+//template <typename K, typename V>
+//class HashTable
+//{
+//private:
+//	struct Node {
+//		K key;
+//		V value;
+//		Node* next;
+//
+//		Node(const K& k, const V& v) : key(k), value(v), next(nullptr) {}
+//	};
+//
+//	Node** table;      // 버킷 배열 (체이닝용)
+//	int capacity;      // 버킷 개수
+//	int size;          // 저장된 총 개수
+//
+//	// 해시 함수 (기본 버전)
+//	int hashFunc(const K& key) const {
+//		return std::hash<K>{}(key) % capacity;
+//	}
+//
+//public:
+//	HashTable(int cap = 10) : capacity(cap), size(0) {
+//		table = new Node * [capacity];
+//		for (int i = 0; i < capacity; i++)
+//			table[i] = nullptr;
+//	}
+//
+//	~HashTable() {
+//		for (int i = 0; i < capacity; i++) {
+//			Node* curr = table[i];
+//			while (curr) {
+//				Node* temp = curr;
+//				curr = curr->next;
+//				delete temp;
+//			}
+//		}
+//		delete[] table;
+//	}
+//
+//	// 삽입 or 수정
+//	void insert(const K& key, const V& value) {
+//		int idx = hashFunc(key);
+//		Node* curr = table[idx];
+//
+//		while (curr) {
+//			if (curr->key == key) {
+//				curr->value = value; // 수정
+//				return;
+//			}
+//			curr = curr->next;
+//		}
+//
+//		// 맨 앞에 삽입
+//		Node* newNode = new Node(key, value);
+//		newNode->next = table[idx];
+//		table[idx] = newNode;
+//		size++;
+//	}
+//
+//	// 탐색
+//	V* find(const K& key) {
+//		int idx = hashFunc(key);
+//		Node* curr = table[idx];
+//		while (curr) {
+//			if (curr->key == key)
+//				return &(curr->value);
+//			curr = curr->next;
+//		}
+//		return nullptr;
+//	}
+//
+//	// 삭제
+//	void remove(const K& key) {
+//		int idx = hashFunc(key);
+//		Node* curr = table[idx];
+//		Node* prev = nullptr;
+//
+//		while (curr) {
+//			if (curr->key == key) {
+//				if (prev)
+//					prev->next = curr->next;
+//				else
+//					table[idx] = curr->next;
+//
+//				delete curr;
+//				size--;
+//				return;
+//			}
+//			prev = curr;
+//			curr = curr->next;
+//		}
+//	}
+//
+//	// 디버깅용 출력
+//	void printTable() const {
+//		cout << "[HashTable 상태]" << endl;
+//		for (int i = 0; i < capacity; i++) {
+//			cout << "[" << i << "]: ";
+//			Node* curr = table[i];
+//			while (curr) {
+//				cout << "(" << curr->key << ", " << curr->value << ") -> ";
+//				curr = curr->next;
+//			}
+//			cout << "nullptr" << endl;
+//		}
+//	}
+//};
+#pragma endregion
+
+
 int main()
 {
 	PriorityQueue<int> pq;
@@ -207,9 +334,12 @@ int main()
 	pq.push(9);
 
 	cout << pq.top() << endl;
+	pq.pop();
+	cout << pq.top() << endl;
+	pq.pop();
+	cout << pq.top() << endl;
 	cout << pq.isEmpty() << endl;
 
-	
 
 	return 0;
 }
