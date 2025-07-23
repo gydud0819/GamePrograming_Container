@@ -1,147 +1,127 @@
 ﻿#include "Util.h"
-#define SIZE 4
 
-// 내일 원형 큐, priority Queue? 예정 
 template <typename T>
-class Queue
+// 우선순위의 기준이... ㅇㅅㅇ
+class PriorityQueue		// 동적 배열로 만들기			// 정적이 아니라? 홀리몰리 
 {
 private:
-	int front;	// [3]에서 front가 시작함 (?) 
-	int rear;
-	T container[SIZE];
+	int index;			// 배열 크기? 
+	int capacity;		// 메모리 공간 크기? 맞나? 아닌거 같은데 
+
+	T* container;
 public:
-	Queue() : front(SIZE - 1) , rear(SIZE - 1)		//[3]에서 front, rear이 시작하니까 SIZE - 1이 맞겠네 
+	PriorityQueue() : index(0), capacity(0), container(nullptr) {}
+	~PriorityQueue()
 	{
-		for (int i = 0; i < SIZE; i++)
+		// 소멸자 
+		if (container != nullptr)
 		{
-			container[i] = NULL;
+			delete[] container;
 		}
 	}
-
 public:
-	// 이건 쪼끔 어려운거 같은데 이게 대체 무슨말이야 
+	void resize(int newSize)
+	{
+		capacity = newSize;		// 이게 아닌거 같은데 
+
+		// 2. 새로운 포인터 변수를 생성하고 새롭게 만들어진 메모리 공간을 가리키도록 하기
+		T* newContainer = new T[newSize];
+
+		// 3. 새로운 메모리 공간의 값 초기화하기
+		for (int i = 0; i < capacity; i++)
+		{
+			newContainer[i] = T();	// NULL도 가능
+
+		}
+
+		// 4. 기존 배열에 있는 값을 복사해서 새로운 배열에 넣어주기 
+		for (int i = 0; i < index; i++)
+		{
+			newContainer[i] = container[i];
+		}
+
+		// 5. 기존 배열의 메모리 해제하기
+		if (container != nullptr)
+			delete[] container;
+
+		// 6. 기존 배열을 가리키던 포인터 변수의 값을 새로운 배열의 시작 주소로 가리키기 
+		container = newContainer;
+	}
+
+	// 우와............................... 이게 무슨 말이야 
 	void push(T data)
 	{
-		if ((rear + 1) % SIZE == front)		// if ((rear + 1) % SIZE == front)		// 이게 원형 큐에서 rear가 front랑 같으면 꽉 찬거니까
+		// 진짜 필요없나			// 필요하네 
+		if (capacity <= 0)
 		{
-			cout << "Queue is Full " << endl;
-			return;		// 이게 없으면 계속 진행되니까 return 해줘야함
+			resize(1);
+		}
+
+		if (index >= capacity)
+		{
+			return resize(capacity * 2);	// 2배 증가요? 
+		}
+
+		container[index++] = data;
+
+		int child = index - 1;		// 자식
+		int parent = (child - 1) / 2;		// 부모
+
+		// while 쓰는건가? 
+		while (child > 0)
+		{
+			//heapify 공식 들어가는 거 같고		// 비교해서 크면 바꾸고 아니면 냅둬야하는거 같은데 
+			if (container[child] > container[parent])
+			{
+				swap(container[child], container[parent]);
+			}
+
+			child = parent;
+			parent = (child - 1) / 2;
+		}
+
+		// child 공식 : child가 [1]이 될수 있게 공식 만들기 
+		// parent 공식 : (child - 1) / 2 = [0]
+		// swap을 이용해서 바꿔라(?) 
+	}
+
+	const T& top()
+	{
+		return container[0];
+	}
+
+	const bool& isEmpty()
+	{
+		return index <= 0;
+	}
+
+	void pop()		// 집가서 수정하기 
+	{
+		// 전위? --index; <-이거? 
+
+		// 왼쪽 : parent * 2 + 1
+		// 오른쪽 : 왼쪽 + 1
+
+		int parent = 0;
+		int leftchild = parent * 2 + 1;		// 왼쪽 오른쪽 자식 변수 있어야하나용?
+		int rightchild = leftchild + 1;
+		int child = leftchild - 1;
+
+		while ((parent * 2 + 1) < index)
+		{
+			if (container[leftchild] < container[rightchild])
+			{
+				swap(container[child], container[parent]);
+			}
+		
+			container[child] = container[parent];
+			child = parent;			// ? 
+
+			break;
 		}
 	
-		rear = (rear + 1) % SIZE;		// rear가 0부터 시작하니까 0, 1, 2, 3, 0, 1, 2, 3 이런식으로 계속 반복되는듯
-		container[rear] = data;			// rear이 먼저 가리키	는 자리에 데이터를 넣는다.
-	
 	}
-
-	bool isEmpty()
-	{
-		return rear == front;		// rear가 front랑 같으면 비어있는거니까 반환하기 
-	}
-
-	void pop()
-	{
-		if (isEmpty())
-		{
-			cout << "Queue is Empty" << endl;
-			return;
-		}
-		front = (front + 1) % SIZE;
-		container[front] = NULL;		// front가 가리키는 자리를 비워준다?
-	}
-
-	
 };
-
-// stack, 선형 큐, 원형 큐 예정
-//template <typename T>
-//class Queue
-//{
-//	int front;		// 앞에 추가
-//	int rear;		// 뒤에 추가
-//	int size;		// 원소 개수
-//	int capacity;	// 전체 크기
-//	T* container;	// 데이터 저장할 배열공간
-//
-//public:
-//	Queue(int _capacity) : front(0), rear(0), size(0), capacity(_capacity), container(nullptr)
-//	{
-//		container = new T[_capacity];
-//	}
-//
-//	~Queue()
-//	{
-//		if (container != nullptr)
-//		{
-//			delete[] container;
-//		}
-//	}
-//public:
-//	void resize(int newSize)
-//	{
-//		T* newContainer = new T[newSize];
-//
-//		for (int i = 0; i < size; i++)
-//		{
-//			newContainer[i] = container[(front + i) % capacity];
-//		}
-//
-//		delete[] container;
-//		container = newContainer;
-//
-//		front = 0;
-//		rear = size;
-//		capacity = newSize;
-//	}
-//	// rear 자리에 데이터를 넣고, rear를 다음 자리로 옮긴다. 원형 구조라 배열 끝이면 0으로 돌아가야 한다.
-//	void enqueue(const T& data)
-//	{
-//		// 원소개수가 크기만큼 같아지면 
-//		if (size == capacity)
-//		{
-//			cout << "Queue is Full!" << endl;
-//		}
-//		else
-//		{
-//			container[rear] = data;		// 뒤에서 부터 하나씩 데이터 추가하기
-//
-//			rear = (rear + 1) % capacity;	// 넣은거만큼 +1 하는 이유가 container가 가리키는 위치때문인건가? 들어간거에서 젤 뒤를 가리키고 전체 배열로 나누면 한칸씩 데이터 들어감
-//
-//			size++;	// 그리고 원소개수 증가시키기
-//		}
-//	}
-//
-//	void dequeue()
-//	{
-//		if (size == 0)
-//		{
-//			cout << "dequeue is empty" << endl;
-//		}
-//		else
-//		{
-//			//cout << "dequeue : " << container[front] << endl;
-//			front = (front + 1) % capacity;
-//			size--;		// 삭제니까 감소하기 
-//		}
-//	}
-//
-//	void peek()
-//	{
-//
-//	}
-//
-//	bool isEmpty()
-//	{
-//		return size == 0;
-//	}
-//
-//	bool isFull()
-//	{
-//		return size == capacity;
-//	}
-//};
-
-
-
 //#define SIZE 100
 //
 //class PriorityQueue {
@@ -214,29 +194,25 @@ public:
 //	}
 //};
 
-
+// 내일 해시테이블 예정 
 int main()
 {
-	Queue<int> q;
-	q.push(10);
-	q.push(20);
-	q.push(30);
-	q.push(40);
-	//q.push(50);	// 이거는 꽉 찼으니까 안들어가는게 맞는데 40까진 들어가야하는거같은데 왜 40에서부터 터지냐 미친듯
-	return 0;
+	PriorityQueue<int> pq;
 
-	//PriorityQueue pq;
-	//
-	//pq.push(30, 1);		// 데이터: 30, 우선순위: 1
-	//pq.push(10, 3);		// 데이터: 10, 우선순위: 3
-	//pq.push(20, 2);		// 데이터: 20, 우선순위: 2
-	//
-	//pq.print();			// [10, p=3] [20, p=2] [30, p=1]
-	//
-	//cout << "Pop: " << pq.pop() << endl; // 10
-	//cout << "Pop: " << pq.pop() << endl; // 20
-	//cout << "Pop: " << pq.pop() << endl; // 30
-	//cout << "Pop: " << pq.pop() << endl; // Queue is Empty
-	//
-	//return 0;
+	pq.push(5);
+	pq.push(3);
+	pq.push(6);
+	pq.push(7);
+	pq.push(1);
+	pq.push(9);
+
+	cout << pq.top() << endl;
+	cout << pq.isEmpty() << endl;
+
+	
+
+	return 0;
 }
+
+
+

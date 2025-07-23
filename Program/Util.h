@@ -6,6 +6,7 @@
 #include <deque>
 #include <set>
 #include <map>
+#include <algorithm>
 
 #include <Windows.h>
 
