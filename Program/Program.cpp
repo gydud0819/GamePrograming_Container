@@ -37,24 +37,23 @@ public:
 	// 소멸자 
 	~HashTable()
 	{
-		Node* deleteNode;
-		Node* nextNode;
-
 		// bucket 비우기 
-		// 운동가지 마까... 또 불안해지네 ㅇㅂㅇ 조바심 내면 안되는데 
-
 		for (int i = 0; i < SIZE; i++)
 		{
-			
+			if (bucket[i].head != nullptr)
+			{
+				Node* deleteNode = bucket[i].head;	// 현재 노드 저장
+				while (deleteNode != nullptr)
+				{
+					Node* nextNode = deleteNode->next;		// 다음 노드 저장
+					delete deleteNode;				// 현재 노드 삭제
+					deleteNode = nextNode;			// 다음 노드로 이동
+				}
+				bucket[i].head = nullptr;	// 현재 버킷의 head를 nullptr로 초기화
+				bucket[i].count = 0;		// 현재 버킷의 count를 0으로 초기화
+			}
 		}
-		
-		
-		if (bucket[head] != nullptr)
-		{
-
-		}
-		
-		deleteNode->next = nullptr;
+		// 버킷 배열 자체는 동적 할당이 아니므로 별도로 delete할 필요 없다
 	}
 
 public:
@@ -106,6 +105,40 @@ public:
 		// 참조하라구요? 
 
 	}
+
+	//bool erase(K key)
+	//{
+	//	int index = hash_function(key);  // 해시 함수로 인덱스 찾기
+	//	Node* currentNode = bucket[index].head;
+	//	Node* previousNode = nullptr;
+
+	//	while (currentNode != nullptr)
+	//	{
+	//		if (currentNode->key == key) // 삭제 대상 발견
+	//		{
+	//			if (previousNode == nullptr)
+	//			{
+	//				// 첫 번째 노드를 삭제할 경우
+	//				bucket[index].head = currentNode->next;
+	//			}
+	//			else
+	//			{
+	//				// 중간 또는 끝 노드 삭제
+	//				previousNode->next = currentNode->next;
+	//			}
+
+	//			delete currentNode;
+	//			bucket[index].count--; // 카운트 감소
+	//			return true; // 삭제 성공
+	//		}
+
+	//		previousNode = currentNode;
+	//		currentNode = currentNode->next;
+	//	}
+
+	//	return false; // key 못 찾았음
+	//}
+
 };
 
 #pragma region MyRegion
