@@ -5,9 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|solutionrelative:Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6C13E3E6-F583-4E54-91B9-78C68A9470C6}|..\\Class11th Adjacency Matrix (\uC778\uC811 \uD589\uB82C \uADF8\uB798\uD504)\\Class11th Adjacency Matrix (\uC778\uC811 \uD589\uB82C \uADF8\uB798\uD504).vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class11th Adjacency Matrix (\uC778\uC811 \uD589\uB82C \uADF8\uB798\uD504)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -17,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -25,26 +22,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class11th Adjacency Matrix (\uC778\uC811 \uD589\uB82C \uADF8\uB798\uD504)\\Source.cpp",
-              "RelativeDocumentMoniker": "..\\Class11th Adjacency Matrix (\uC778\uC811 \uD589\uB82C \uADF8\uB798\uD504)\\Source.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class11th Adjacency Matrix (\uC778\uC811 \uD589\uB82C \uADF8\uB798\uD504)\\Source.cpp",
-              "RelativeToolTip": "..\\Class11th Adjacency Matrix (\uC778\uC811 \uD589\uB82C \uADF8\uB798\uD504)\\Source.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAHgAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-29T05:05:49.254Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cpp",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp",
               "RelativeDocumentMoniker": "Program.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp",
-              "RelativeToolTip": "Program.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAADAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp*",
+              "RelativeToolTip": "Program.cpp*",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAswCQAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-07-29T04:40:37.408Z",
               "EditorCaption": ""

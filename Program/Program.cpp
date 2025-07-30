@@ -1,102 +1,122 @@
 ﻿#include "Util.h"
-#define SIZE 10
 
-// 진짜 팀플 끝나고 주말 알바 끝나고 인접 행렬 다시해야겟다 내가 어디를 모르는지 알아야 물어보지 tq
 template <typename T>
-class AdjacencyList // 인접행렬 리스트 
+class Set
 {
+	// 부모 노드(루트), 왼쪽자식, 오른쪽 자식 노드 필요
 private:
 	struct Node
 	{
-		T data;
-		Node* next;
+		T data;		// ? 이거 맞나 
+		Node* leftNode;
+		Node* rightNode;
 
-		Node(T _data, Node* _link = nullptr)
-		{
-			data = _data;		// this 대신 이렇게 써도되겟지? 
-			next = _link;
-		}
+		Node() : data(0), leftNode(nullptr), rightNode(nullptr) {}
 	};
 
-	int size;		// 정점의 개수? 
-	T vertex[SIZE];		// 이게 집합인가?  정점의 집합 V? T?
-	Node* list[SIZE];	// 리스트 어케 만드냐?
+	int size;
+	Node* root;
+
+	// 데이터 없어도되나? 얘가 루트인가 
 
 public:
-	AdjacencyList() : size(0)
+	Set() : size(0), root(nullptr) {}
+	~Set()
 	{
-		for (int i = 0; i < SIZE; i++)
-		{
-			list[i] = NULL;
-			vertex[i] = NULL;
-		}
+
 	}
 
-	~AdjacencyList()
+public:
+	void insert(T data)
 	{
-		if (list!=nullptr)
+		Node* createNode(T data)
 		{
-			for (int i = 0; i < SIZE; i++)
-			{
 
+		}
+
+		// 아오 그지같네 얘도 끝나고 다시 해봐야겠다
+		if (root == nullptr)
+		{
+			Node* newNode = root;
+			size++;
+			return;
+		}
+
+		// 중복되는 키값을 허용하지 않음
+
+		// root보다 값이 작으면 왼쪽 크면 오른쪽
+
+		else
+		{
+			Node* currentNode = newNode;
+			while (currentNode != nullptr)		// 임시
+			{
+				if (data < currentNode->data)
+				{
+					if (currentNode->leftNode == nullptr)
+					{
+						currentNode->leftNode = new Node(data);
+						size++;
+						return;
+					}
+					currentNode = currentNode->leftNode;
+				}
+				else if (data > currentNode->data)
+				{
+					if (currentNode->rightNode == nullptr)
+					{
+						currentNode->rightNode = new Node(data);
+						size++;
+						return;
+					}
+					currentNode = currentNode->rightNode;
+				}
+				else
+				{
+					break;
+				}
 			}
 		}
+
+
+
+
 	}
 
-public:
-	void push(T data)
+	void release(Node* root)
 	{
-		// 1. size가 리스트를 넘어가면..? 
-		if (size >= SIZE)		// size? list[SIZE] vs vertex[SIZE}
+		// 재귀함수 방식으로 삭제
+		if (root == nullptr)
 		{
-			cout << "AdjacencyList is overflow" << endl;
-
-			// return 해야하나? 안해도되네 
+			return;
 		}
 
 		else
 		{
-			// 2. data 증가 시키기(?)
-			vertex[size++] = data;
+			if (root->leftNode == nullptr)
+				release(root->leftNode);
 
 		}
-	}
-
-	void edge(int i, int j)			// 무슨 매번 어렵지않대요...머리터지겟구만ㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠㅠ 
-	{
-		if (size <= 0)
-		{
-			cout << "AdjacencyList is empty" << endl;
-		}
-
-		else if (i >= size || j >= size)
-		{
-			cout << "AdjacencyList index out of Range" << endl;
-		}
-		else
-		{
-			list[i] = new Node(vertex[j], list[i]);
-			list[j] = new Node(vertex[i], list[j]);
-
-		}
-		// 이게 뭔데 이거 맞나 효야 push back느낌이라매 
-		//Node* newNode = new Node;				// () 안에 데이터랑 주소넣기? (data, &data) 이런거? 
-		//newNode->data = j;
-		//newNode->next = nullptr;
-
-		//newNode->next = list[i];
-		//list[i] = newNode->data;
+		
 	}
 
 };
 
+
+
+
+		// 발표를 40분씩이나 한다고? 미쳤네 도랐네 전체적인 흐름 + 어디를 어떻게 이어지게 했는지 말해야하니까 그럴수도 있겠다 
 int main()
 {
-	AdjacencyList<char> adl;
-	adl.push('A');
-	adl.push('B');
-	adl.push('C');
+	Set<int> set;
+	set.insert(5);
+	set.insert(8);
+	set.insert(2);
+	set.insert(1);
+	set.insert(9);
+	set.insert(10);
+	set.insert(14);
+	set.insert(6);
 
-	adl.edge(0, 2);
 	return 0;
 }
