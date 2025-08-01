@@ -29,6 +29,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class11th Adjacency Matrix 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class12th Adjcency List (인접 리스트)", "..\Class12th Adjcency List (인접 리스트)\Class12th Adjcency List (인접 리스트).vcxproj", "{15222A31-211E-4E3D-8EFD-D769FE73E858}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Class13th Binary Search Tree (이진 탐색 트리)", "..\Class13th Binary Search Tree (이진 탐색 트리)\Class13th Binary Search Tree (이진 탐색 트리).vcxproj", "{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +143,14 @@ Global
 		{15222A31-211E-4E3D-8EFD-D769FE73E858}.Release|x64.Build.0 = Release|x64
 		{15222A31-211E-4E3D-8EFD-D769FE73E858}.Release|x86.ActiveCfg = Release|Win32
 		{15222A31-211E-4E3D-8EFD-D769FE73E858}.Release|x86.Build.0 = Release|Win32
+		{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}.Debug|x64.ActiveCfg = Debug|x64
+		{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}.Debug|x64.Build.0 = Debug|x64
+		{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}.Debug|x86.ActiveCfg = Debug|Win32
+		{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}.Debug|x86.Build.0 = Debug|Win32
+		{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}.Release|x64.ActiveCfg = Release|x64
+		{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}.Release|x64.Build.0 = Release|x64
+		{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}.Release|x86.ActiveCfg = Release|Win32
+		{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
