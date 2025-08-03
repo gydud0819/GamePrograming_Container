@@ -12,17 +12,7 @@
 * 인접 행렬 - 인접 리스트 (단일 연결 리스트로 연결(?)
 * 2차원 배열 - 포인터 배열
 *
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
-*
+
 */
 
 #pragma endregion
@@ -34,18 +24,19 @@ private:
 	// 정점의 개수
 	int size;
 
-	int** matrix;			// ???????
-	int matrixCount;		// ????????????????????????????????
+	int** matrix;			// 정점 데이터를 저장하는 배열 (2차원)
+	int matrixCount;		// 현재 인접 행렬의 행/열 수
 	// 정접의 집합
-	T* vertex;				// 나중에 벡터로 해봐야할듯
+	T* vertex;				// 정점 데이터를 저장하는 배열
 	// 인접 행렬의 최대 용량
-	int capacity;
+	int capacity;	
 	// 인접 행렬
 
 public:
 	AdjacencyMatrix() : size(0), vertex(nullptr), capacity(0), matrix(nullptr), matrixCount(0) {}		// 초기화 어케함 
 	~AdjacencyMatrix()
 	{
+		// 인접 행렬 헤제
 		if (matrix != nullptr)
 		{
 			for (int i = 0; i < matrixCount; i++)
@@ -90,24 +81,27 @@ public:
 
 	void push(T data)
 	{
+		// 인접 행렬의 최대 용량이 0보다 작거나 같다면 
 		if (capacity <= 0)
 		{
-			resize(1);
+			resize(1);		// resize(1) 반환하기 
 		}
 
-		else if (size >= capacity)
+		else if (size >= capacity)		// 정점의 개수가 최대 용량보다 크거나 같다면
 		{
-			resize(capacity * 2);
+			resize(capacity * 2);		// 용량 2배로 늘려주기 
 		}
 
-		vertex[size++] = data;
+		vertex[size++] = data;			// 정점 데이터에 저장하는 배열에 값 추가하고 size 증가하기 
 	}
 
 	// 인접 행렬의 메모리를 새로 생성하는 함수 
 	void resize()
 	{
+		// 2차원 인접 행렬 배열 == 정점 개수
 		int** newMatrix = new int* [size];
-		// 1. 기존에 있던 matrix 데이터 옮기기 (어디로 옮기는거임 newMatrix?)
+		
+		// 정점 개수만큼 돌리기 
 		for (int i = 0; i < size; i++)
 		{
 			newMatrix[i] = new int[size] {0};		// 행 초기화
@@ -181,12 +175,12 @@ public:
 
 			// 여따가 하나보네 이거 맞나
 
+			// 무방향 그래프이므로 양쪽에 1 설정 해주기 
 			matrix[i][j] = 1;
 			matrix[j][i] = 1;
 
 		}
 
-		// ㅏ? 
 	}
 	template <typename T>
 	friend ostream& operator << (ostream& ostream, const AdjacencyMatrix<T>& adm)		// friend 키워드를 이용해서 외부에서 사용할 수 있도록 

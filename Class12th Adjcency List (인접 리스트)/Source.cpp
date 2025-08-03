@@ -89,29 +89,24 @@ public:
 		}
 		else
 		{
+			// i에서 j로 연결 (j를 i의 리스트에 넣기)
 			list[i] = new Node(vertex[j], list[i]);
+
+			// j에서 i로도 연결 (무방향이니까)
 			list[j] = new Node(vertex[i], list[j]);
 
 		}
 
-		// 이게 뭔데 이거 맞나 효야 push back느낌이라매 
-		//Node* newNode = new Node;				// () 안에 데이터랑 주소넣기? (data, &data) 이런거? 
-		//newNode->data = j;
-		//newNode->next = nullptr;
-
-		//newNode->next = list[i];
-		//list[i] = newNode->data;
 	}
 
-	template <typename T>
-	friend ostream& operator << (ostream& ostream, const AdjacencyList<T>& adjlist)
+	friend ostream& operator << (ostream& ostream, const AdjacencyList<T>& adjacencyList)
 	{
-		// for가 아닌거같은데? 
-		for (int i = 0; i < adjlist.size; i++)
+		for (int i = 0; i < adjacencyList.size; i++)
 		{
-			ostream << adjlist.vertex[i] << " : ";
+			ostream << adjacencyList.vertex[i] << " : ";
 
-			typename AdjacencyList<T>::Node* currentNode = adjlist.list[i];
+			typename AdjacencyList<T>::Node* currentNode = adjacencyList.list[i];
+
 			while (currentNode != nullptr)
 			{
 				ostream << currentNode->data << " ";
@@ -121,6 +116,7 @@ public:
 
 			ostream << endl;
 		}
+
 		return ostream;
 	}
 
@@ -134,6 +130,7 @@ int main()
 	adl.push('B');
 	adl.push('C');
 
+	adl.edge(0, 1);
 	adl.edge(0, 2);
 
 	cout << adl << endl;

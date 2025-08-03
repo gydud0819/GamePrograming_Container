@@ -1,20 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\",
+  "WorkspaceRootPath": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Program\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}|..\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC).vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}|..\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC).vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|solutionrelative:Util.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{96ED706F-0C45-4BF3-985E-04DA2ED25815}|Program.vcxproj|solutionrelative:Program.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{1859C2CC-EB4D-48D4-8C36-AD5CCDCBF818}|..\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC).vcxproj|C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,62 +13,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Util.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Util.h",
-              "RelativeDocumentMoniker": "Util.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Util.h",
-              "RelativeToolTip": "Util.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-01T04:33:26.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Util.h",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Util.h",
-              "RelativeDocumentMoniker": "..\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Util.h",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Util.h",
-              "RelativeToolTip": "..\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Util.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-01T04:33:24.991Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Source.cpp",
+              "DocumentMoniker": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Source.cpp",
               "RelativeDocumentMoniker": "..\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Source.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Source.cpp",
+              "ToolTip": "C:\\Users\\DPC\\Desktop\\\uAD6D\uBE44 \uC720\uB2C8\uD2F0 \uD504\uB85C\uC81D\uD2B8\\GamePrograming_Container\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Source.cpp",
               "RelativeToolTip": "..\\Class13th Binary Search Tree (\uC774\uC9C4 \uD0D0\uC0C9 \uD2B8\uB9AC)\\Source.cpp",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAQwMQAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAiwBsAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-01T04:33:04.75Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp",
-              "RelativeDocumentMoniker": "Program.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\GamePrograming_Container\\Program\\Program.cpp",
-              "RelativeToolTip": "Program.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-07-29T04:40:37.408Z",
+              "WhenOpened": "2025-08-03T11:27:52.373Z",
               "EditorCaption": ""
             }
           ]

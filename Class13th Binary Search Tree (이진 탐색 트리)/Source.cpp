@@ -3,199 +3,215 @@
 template <typename T>
 class Set
 {
-	// 부모 노드(루트), 왼쪽자식, 오른쪽 자식 노드 필요
 private:
+	// 이진 탐색 트리 노드 구조
 	struct Node
 	{
-		T data;		// ? 이거 맞나 
-		Node* leftNode;
-		Node* rightNode;
+		T data;                // 노드에 저장될 값
+		Node* leftNode;        // 왼쪽 자식
+		Node* rightNode;       // 오른쪽 자식
 
 		Node() : data(0), leftNode(nullptr), rightNode(nullptr) {}
 	};
 
-	int size;
-	Node* root;
-
-	// 데이터 없어도되나? 얘가 루트인가 
+	int size;                // 트리 전체 노드 수
+	Node* root;              // 트리의 루트 노드
 
 public:
 	Set() : size(0), root(nullptr) {}
+
 	~Set()
 	{
-		release(root);
+		release(root);        // 소멸자에서 전체 트리 삭제
 	}
 
-public:
-	//void insert(T data)
-	//{
-	//	Node* createNode(T data)
-	//	{
-	//
-	//	}
-	//
-	//	// 아오 그지같네 얘도 끝나고 다시 해봐야겠다
-	//	if (root == nullptr)
-	//	{
-	//		Node* newNode = root;
-	//		size++;
-	//		return;
-	//	}
-	//
-	//	// 중복되는 키값을 허용하지 않음
-	//
-	//	// root보다 값이 작으면 왼쪽 크면 오른쪽
-	//
-	//	else
-	//	{
-	//		Node* currentNode = newNode;
-	//		while (currentNode != nullptr)		// 임시
-	//		{
-	//			if (data < currentNode->data)
-	//			{
-	//				if (currentNode->leftNode == nullptr)
-	//				{
-	//					currentNode->leftNode = new Node(data);
-	//					size++;
-	//					return;
-	//				}
-	//				currentNode = currentNode->leftNode;
-	//			}
-	//			else if (data > currentNode->data)
-	//			{
-	//				if (currentNode->rightNode == nullptr)
-	//				{
-	//					currentNode->rightNode = new Node(data);
-	//					size++;
-	//					return;
-	//				}
-	//				currentNode = currentNode->rightNode;
-	//			}
-	//			else
-	//			{
-	//				break;
-	//			}
-	//		}
-	//	}
-	//}
-
-	void release(Node* root)
+	// 노드 생성 함수 (강사님이 따로 함수 만들라 한 부분)
+	Node* createNode(T data)
 	{
-		// 재귀함수 방식으로 삭제
-		if (root != nullptr)
+		Node* newNode = new Node;
+		newNode->data = data;
+		newNode->leftNode = nullptr;
+		newNode->rightNode = nullptr;
+		return newNode;
+	}
+
+	// 값 삽입
+	void insert(T data)
+	{
+		if (root == nullptr)
 		{
-			release(root->leftNode);
-
-			release(root->rightNode);
-
-			delete root;
+			root = createNode(data);   // 루트가 없으면 최초 삽입
 		}
-
-	}
-
-	// 지우는거
-	void erase(T data)
-	{
-		// root로 접근하기 
-		Node* currentNode = root;		// ?????????? 
-		Node* parentNode = nullptr;
-
-		// current가 찾고자 하는 자식이 더 크면 왼쪽으로 간다?
-
-		// 삭제할 때 조건
-
-		// 1. 자식 노드가 없을 때
-		// 2. 자식 노드가 1개 있을 때
-		// 3. 자식 노드가 2개 있을 때
-
-		// while 안에 모든게 지금 다들어가있는거 같은데 뭐야 이거 
-		while (currentNode != nullptr && currentNode->data != data)
+		else
 		{
-			if (currentNode->data > data)
-			{
-				parentNode = currentNode;
-				currentNode = currentNode->leftNode;
-			}
-			else
-			{
-				currentNode = currentNode->rightNode;
-			}
+			Node* currentNode = root;
 
-			// current가 nullptr이면 없다고 출력하기(?)
-			if (currentNode == nullptr)
+			while (currentNode != nullptr)
 			{
-				cout << "data is not found" << endl;
-			}
-
-			else if (currentNode->leftNode == nullptr && currentNode->rightNode == nullptr)
-			else if (currentNode->leftNode == nullptr || currentNode->rightNode == nullptr)
-			else
-			{
-				Node* childNode = currentNode->rightNode;
-				Node* traceNode = currentNode;
-
-				while (childNode->leftNode != nullptr)
+				// 중복 값은 삽입하지 않음
+				if (currentNode->data == data)
 				{
-					traceNode = childNode;
-					childNode = childNode->leftNode;
-
+					return;
 				}
-
-				currentNode->data = childNode->data;
-				traceNode->leftNode = childNode->rightNode;
-
-				delete childNode;
-
-				return;
-
-				if (parentNode != nullptr)
+				else if (currentNode->data > data)
 				{
-					if (parentNode->leftNode == currentNode)
+					// 왼쪽 자식이 비어 있으면 삽입
+					if (currentNode->leftNode == nullptr)
 					{
-						parentNode->leftNode = nullptr;
+						currentNode->leftNode = createNode(data);
+						return;
 					}
 					else
 					{
-						parentNode->rightNode = nullptr;
+						currentNode = currentNode->leftNode;
 					}
 				}
-				root = nullptr;
+				else
+				{
+					// 오른쪽 자식이 비어 있으면 삽입
+					if (currentNode->rightNode == nullptr)
+					{
+						currentNode->rightNode = createNode(data);
+						return;
+					}
+					else
+					{
+						currentNode = currentNode->rightNode;
+					}
+				}
 			}
 		}
-		delete currentNode;
-
-
-
 	}
 
+	// 메모리 해제 (후위 순회 방식)
+	void release(Node* root)
+	{
+		if (root != nullptr)
+		{
+			release(root->leftNode);
+			release(root->rightNode);
+			delete root;
+		}
+	}
+
+	// 값 삭제 함수
+	void erase(T data)
+	{
+		Node* currentNode = root;
+		Node* parentNode = nullptr;
+
+		// 1. 삭제할 노드를 먼저 탐색
+		while (currentNode != nullptr && currentNode->data != data)
+		{
+			parentNode = currentNode;
+
+			if (currentNode->data > data)
+				currentNode = currentNode->leftNode;
+			else
+				currentNode = currentNode->rightNode;
+		}
+
+		if (currentNode == nullptr)
+		{
+			cout << "the data does not exist" << endl;
+			return;
+		}
+
+		// 2-1. 자식이 없는 노드 삭제
+		else if (currentNode->leftNode == nullptr && currentNode->rightNode == nullptr)
+		{
+			if (parentNode != nullptr)
+			{
+				if (parentNode->leftNode == currentNode)
+					parentNode->leftNode = nullptr;
+				else
+					parentNode->rightNode = nullptr;
+			}
+			else
+			{
+				root = nullptr;  // 루트 자체였던 경우
+			}
+		}
+
+		// 2-2. 자식이 하나만 있는 노드 삭제
+		else if (currentNode->leftNode == nullptr || currentNode->rightNode == nullptr)
+		{
+			Node* child = (currentNode->leftNode != nullptr) ? currentNode->leftNode : currentNode->rightNode;
+
+			if (parentNode != nullptr)
+			{
+				if (parentNode->leftNode == currentNode)
+					parentNode->leftNode = child;
+				else
+					parentNode->rightNode = child;
+			}
+			else
+			{
+				root = child;  // 루트였을 때
+			}
+		}
+
+		// 2-3. 자식이 둘 다 있는 노드 삭제
+		else
+		{
+			// 오른쪽 서브트리에서 최소값 찾기
+			Node* childNode = currentNode->rightNode;
+			Node* traceNode = currentNode;
+
+			while (childNode->leftNode != nullptr)
+			{
+				traceNode = childNode;
+				childNode = childNode->leftNode;
+			}
+
+			// 최소값으로 현재 노드 값 교체
+			currentNode->data = childNode->data;
+
+			// 최소값 노드 삭제 처리
+			if (traceNode == currentNode)
+				traceNode->rightNode = childNode->rightNode;
+			else
+				traceNode->leftNode = childNode->rightNode;
+
+			delete childNode;
+			return;
+		}
+
+		// 마지막 delete는 자식 없는 노드나 자식 한 개일 때 해당
+		delete currentNode;
+	}
+
+	// 중위 순회 호출 (외부 인터페이스)
+	void inorder()
+	{
+		inorder(root);
+	}
+
+	// 중위 순회 (왼쪽 → 현재 → 오른쪽)
 	void inorder(Node* root)
 	{
-		/*if (root == nullptr)
-		{
-			root = this->root;
-		}*/
-
 		if (root != nullptr)
 		{
 			inorder(root->leftNode);
-			cout << root->data;
+			cout << root->data << " ";
 			inorder(root->rightNode);
 		}
 	}
 };
 
 
+
 int main()
 {
 	Set<int> set;
-	//set.insert(5);
-	//set.insert(8);
-	//set.insert(2);
-	//set.insert(1);
-	//set.insert(9);
-	//set.insert(10);
-	//set.insert(14);
-	//set.insert(6);
+	set.insert(5);
+	set.insert(8);
+	set.insert(2);
+	set.insert(1);
+	set.insert(9);
+	set.insert(10);
+	set.insert(14);
+	set.insert(6);
 
 	set.erase(6);
 
